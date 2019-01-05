@@ -1,0 +1,14 @@
+<html>
+<body onload="dothis()">
+</body>
+<script>
+function dothis(){
+	var myObject={a:10,b:20};
+	var item;
+	for(item in myObject){ 
+		console.log(myObject[item]);
+		console.log(Object.keys(myObject)[0]);
+	}
+}
+</script>
+</html>

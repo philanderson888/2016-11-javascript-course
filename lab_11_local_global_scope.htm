@@ -1,0 +1,21 @@
+<html>
+<script>
+var x = 1;   // GLOBAL AS OUTSIDE FN
+var z = "hello";  //GLOBAL
+function y(){ 
+	var z = 2;      //LOCAL
+	//---------------------------BLOCK
+	for (var i=1;i<10;i++){
+	 let a="inside block";
+		console.log(a);
+	}
+	//----------------------------
+	console.log(a);
+	console.log(z);
+}
+console.log(x);
+console.log(z);
+const myFixedValue = 777;
+y();
+</script>
+</html>

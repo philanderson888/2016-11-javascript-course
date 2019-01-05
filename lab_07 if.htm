@@ -1,0 +1,87 @@
+<html>
+<head>
+	<style>
+	div{
+		width:200;
+		height:100;
+		background-color:pink;
+		margin:5%;
+	}
+	input{
+		border:solid grey;
+		border-radius:5px;
+		width:24%;
+		border-width:2px;
+	}
+	h1{
+		font-family:arial;
+		padding:30px;
+	}
+	</style>
+
+</head>
+<body>
+<div id="display" onclick="fndothis()">
+	<h1>Validation</h1>
+</div>
+<div id="display2">
+</div>
+<form name="form1" onsubmit="return formSubmit()">
+Please enter even number x:<br />
+<input name="inputx" id="inputx" type="number" step="2" max="10" min="0" onfocus="style='background-color:yellow'" onblur="fnvalidate(parseInt(inputx.value));style='background-color:white'" />
+<input type="submit" value="Submit Here" />
+</form>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+<script>
+
+function fndothis(){
+	var x=prompt('Please enter x');
+	if(x>10){
+		alert('x is greater than 10 - x is ' + x);
+	}
+}
+function fnvalidate(numToValidate){
+	console.log(numToValidate);
+	if(numToValidate===0){
+		document.getElementById('display2').innerHTML='ZERO NOT ALLOWED';
+	}
+	else if(numToValidate<10){
+		$('#display2').text('under 10');
+	}
+	else if(numToValidate<20){
+		$('#display2').text('under 20')
+	}
+	else{
+		$('#display2').text('out of limits');
+	}
+
+}
+function formSubmit(){
+	event.preventDefault();
+	var allowSubmit=false;
+	var displayString = 'Form will not submit';
+	console.log(document.getElementById('inputx').value);
+	if(document.getElementById('inputx').value=='6'){
+		displayString='Form will submit';
+		allowSubmit=true;
+	}
+	console.log(allowSubmit);
+	$('#display2').text(displayString);
+	if(allowSubmit){
+		$('#display2').text("Form now submitting");
+		setTimeout(function(){
+			document.forms.form1.submit();
+		},2000);
+	}
+	return allowSubmit;
+}
+</script>
+
+
+</body>
+</html>

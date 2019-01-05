@@ -1,0 +1,21 @@
+﻿Labs for today
+Build HTML page with as many of standard items as possible
+On form submit, use preventDefault to stop the form submitting.
+Do form validation on all of the input items in Javascript
+Validate the items
+If NOT OK : RED BORDER ROUND FIELD??? AND/OR MESSAGE IN A DIV
+Let the user know the form is OK
+Wait 2 seconds using setTimeout
+Save the data to a JSON object
+Save data to localStorage
+On page load
+Check localStorage
+If object exists load the data
+Console.log the data
+Prefill (use JSON.parse) at least the text fields on the screen - can you get all of the elements to set their data from the data stored in localStorage?
+Bonus : Create buttons 1 and 2 which will refer to two different customer records.  Create an array which will hold two JSON object records.  Button 1 will update record 1 and Button 2 will update record2
+
+	var myArray= [ obj1,obj2 ]
+
+	obj1 = { }
+	obj2 = { }

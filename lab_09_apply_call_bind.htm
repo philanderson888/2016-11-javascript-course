@@ -1,0 +1,18 @@
+<html>
+<script>
+console.log('This object equals');
+console.log(this);
+function x(input1,input2){
+	console.log("This refers to ");
+	console.log(this);
+	console.log("First parameter is " + input1);
+}
+// JUST CALL x normally
+x();
+myObject = {"a":1,"b":2};
+x.call(myObject,1,2);
+x.apply(myObject,[1,2]);    // array of values
+var y = x.bind(myObject);
+y(1,2);   // call y as a function
+</script>
+</html>

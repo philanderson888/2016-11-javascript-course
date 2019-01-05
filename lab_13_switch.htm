@@ -1,0 +1,22 @@
+<html>
+<body onload="dothis()">
+</body>
+<script>
+function dothis(){
+	var x = Math.ceil(Math.random()*10);
+	console.log(x);
+	switch(x){
+		case 1:
+			console.log('Jackpot');
+			break;
+		case 2:
+			console.log('Failed');
+			break;
+		case 10:
+			console.log('Bonus ball');
+			break;
+		default: console.log('No score');
+	}
+}
+</script>
+</html>

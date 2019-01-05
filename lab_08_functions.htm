@@ -1,0 +1,47 @@
+<html>
+<script>
+function x(){
+	var myJSONObject = {
+     "name":"Philip",
+     "age" : 24,
+     "gender" : "male",
+     "smoker" : false
+	}
+	return myJSONObject;
+}
+var output = x();    // call the function
+console.log(output);
+console.log("Name is " + output.name);
+
+
+var y = () => {
+	var myJSONObject = {
+     "name":"Barry",
+     "age" : 29,
+     "gender" : "male",
+     "smoker" : false
+	}
+	return myJSONObject;
+}
+
+var output1 = y();    // call the function
+console.log(output1);
+console.log("Name is " + output1.name);
+
+// BLUEPRINT : INSTRUCTIONS : HOW TO CREATE OBJECT
+var myObject = function(A,B,optValue=7) {  // CLASS + CONSTRUCTOR
+		this.A=A,
+		this.B=B,
+		this.C=this.A+this.B,
+		this.D=function(){return(this.A*this.B)}
+}
+var myNewObject = new myObject(1,2);  // INSTANTIATING
+		// CREATE NEW OBJECT OUT OF CLASS BLUEPRINT
+var myNewObject2 = new myObject(3,4);	
+var myNewObject3 = new myObject(100,200);		
+console.log(myNewObject);
+console.log(myNewObject.D());
+
+
+</script>
+</html>

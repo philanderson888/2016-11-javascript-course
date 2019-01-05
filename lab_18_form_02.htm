@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <style>
+      body{
+        background-color:#d0e5b0;
+      }
+    </style>
+    <title>Bootstrap 101 Template</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Validation</h1>
+    </div>
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="firstName">First Name:</label>
+          <div class="col-sm-10" id="firstNameDiv">
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" pattern="[A-Za-z]{3}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email1">Email:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email1" name="email1" placeholder="Enter email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <div class="col-sm-10"> 
+            <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter password">
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label><input type="checkbox">Remember me</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" onclick="formValidation()">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+function formValidation(){
+  event.preventDefault();
+  // Internal Validation
+  var firstName = document.getElementById('firstName').value;
+  console.log("First Name is " + firstName);
+  var lastName = document.getElementById('lastName').value;
+  console.log("Last Name is " + lastName);
+  var email1 = $('#email1').val();
+  console.log("Email is " + email1);
+  var password = $('#password').val();
+
+  //First Name validation 
+  var firstNameRegEx = /^Jo\w*/i;
+  var passValidation = firstNameRegEx.test(firstName);
+  console.log('Passed First Name Validation? ' + passValidation);
+
+  if(passValidation === false){
+    document.getElementById('firstName').style.backgroundColor='red';
+    // do same thing wth jquery
+    $('#firstName').css('background-color','pink'); 
+    $('#firstNameDiv').prepend("Invalid First Name - Starts Jo today!");
+  }
+
+  //Last Name validation 
+  var lastNameRegEx = /\w*s$/i;
+  var passValidation = lastNameRegEx.test(lastName);
+  console.log('Passed Last Name Validation? ' + passValidation);
+
+
+  //Password Validation
+  var passwordRegEx = /\w{8,}/i;
+  var passValidation = passwordRegEx.test(password1);
+  console.log('Passed Password Validation? ' + passValidation);
+
+
+
+  //Email Validation
+  var emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+  var passValidation = emailRegEx.test(email1)
+  console.log('Passed Email Validation? - ' + passValidation);
+
+
+   
+
+}
+</script>
+
+
+
+  </body>
+</html>

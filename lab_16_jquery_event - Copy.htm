@@ -1,0 +1,29 @@
+<html>
+<body>
+	<form>
+		<input id="input1" type="text" onkeydown="fnalert('Key Down')" onmousedown="fnalert('Mouse down')" />
+	</form>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+function fnalert(eventType){
+	alert('Event : ' + eventType);
+}
+// Add event listener using JAVASCRIPT
+document.getElementById('input1').addEventListener('keydown',fnalertlistener);
+
+function fnalertlistener(){
+	alert('Event down triggered by listener');
+}
+// JQUERY WRAPPER : WAIT TILL DOCUMENT HAS LOADED
+$(document).ready(function(){
+	alert('hi');
+	// Add event listener USING JQUERY
+	$('#input1').on('mouseover',fnkeyup);
+});
+function fnkeyup(){
+	alert('mouseover event from jquery');
+}
+</script>
+</html>

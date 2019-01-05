@@ -1,0 +1,29 @@
+<!--  CREATE ARRAY MANUALLY
+			DISPLAY ARRAY ON SCREEN
+			BUTTON/DIV ==> CLICK
+			PUSH ITEM ONTO ARRAY
+			REDISPLAY ARRAY
+			  -->
+<html>
+<head>
+
+	<script>
+var myArray=[1,2,3];
+function displayArray(){
+  document.getElementById('display').innerHTML=myArray;
+}
+function add(x){
+	myArray.push(x);
+	displayArray();
+}
+</script>
+
+
+</head>
+<body onload="displayArray()">
+	<div id="display">g</div>
+<button type="button" onclick="add(addItemToArray.value)">Add Item</button>
+<input type="text" id="addItemToArray" name="addItemToArray" />
+
+</body>
+</html>
